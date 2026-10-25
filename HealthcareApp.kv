@@ -1,0 +1,854 @@
+ScreenManager:
+    LoginScreen:
+    RegisterScreen:
+    PatientScreen:
+    HealthTipScreen:
+    ChatScreen:
+    DoctorScreen:
+    ChatDScreen:
+    DiseaseScreen:
+    TreatmentScreen:
+
+
+
+
+
+<LoginScreen>
+    name: "login"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "15dp"
+        cols:1
+
+        #image
+
+        Label:
+            text: "Welcome To CarePoint"
+            font_size: "30dp"
+            color: 0,0,0,1,
+            bold: True
+            size_hint: 1,0.15
+
+        GridLayout:
+            spacing: "5dp"
+            cols:2
+
+            Label:
+                text: "Username:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                id: login_username
+                multiline: False
+
+
+            Label:
+                text: "Password:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                id: login_password
+                password: True
+                multiline: False
+
+        Button:
+            text: "Register Here"
+            bold: True
+            font_size: "30dp"
+            color: 0,0,0,1,
+            background_color: 1,1,0,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: app.root.current="register"
+
+        Button:
+            text: "Login as Doctor"
+            bold: True
+            font_size: "30dp"
+            background_color: 0,0.5,1,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: root.login_user('doctor')
+
+        Button:
+            text: "Login as Patient"
+            bold: True
+            font_size: "30dp"
+            background_color: 0,1,0.5,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: root.login_user('patient')
+
+        Label:
+            id: login_message
+            text: ""
+            color: 1,0,0,1
+            size_hint: 1,0.1
+
+
+
+
+
+
+<RegisterScreen>
+    name: "register"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "10dp"
+        cols:1
+
+        #image
+
+        Label:
+            text: "Welcome To CarePoint"
+            font_size: "30dp"
+            color: 0,0,0,1,
+            bold: True
+            size_hint: 1,0.1
+
+        Button:
+            text: "Back"
+            bold: True
+            font_size: "30dp"
+            background_color: 1,0,0,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: app.root.current="login"
+
+
+        GridLayout:
+            spacing: "5dp"
+            cols:2
+
+            Label:
+                text: "First Name:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                id: first_name_input
+                multiline: False
+
+            Label:
+                text: "Last Name:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                id: last_name_input
+                multiline: False
+
+            Label:
+                text: "Username:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                id: username_input
+                multiline: False
+
+
+            Label:
+                text: "Password:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                id: password_input
+                password: True
+                multiline: False
+
+            Label:
+                text: "Age:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: age_input
+
+            Label:
+                text: "Gender:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: gender_input
+
+            Label:
+                text: "Weight (Pounds):"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: weight_input
+
+            Label:
+                text: "Height (Feet):"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: height_input
+
+            Label:
+                text: "Symptoms or Sicknesses:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: sickness_input
+
+
+        Label:
+            id: register_message
+            text: ""
+            color: 1,0,0,1
+            size_hint: 1,0.1
+
+        Button:
+            text: "Sign Up as Doctor"
+            bold: True
+            font_size: "30dp"
+            background_color: 0,0.5,1,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: root.register_user('doctor')
+
+        Button:
+            text: "Sign Up as Patient"
+            bold: True
+            font_size: "30dp"
+            background_color: 0,1,0.5,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: root.register_user('patient')
+
+
+
+
+
+
+
+<PatientScreen>
+    name: "patient"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "15dp"
+        cols:1
+
+        #image
+
+        Label:
+            id: patient_welcome
+            text: "Welcome Patient"
+            font_size: "30dp"
+            color: 0,0,0,1,
+            bold: True
+            size_hint: 1,0.15
+
+        Button:
+            text: "Submit to See Healthcare Tips"
+            bold: True
+            font_size: "25dp"
+            background_color: 0,1,0.5,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_press: root.on_press_submit_healthcare_tips()
+
+        ScrollView:
+            size_hint: 1, 0.6
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+                Label:
+                    text: root.healthcare_tip
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    valign: 'top'
+                    halign: 'left'
+                    color: 0,0,0,1
+                    bold: False
+                    font_size: "20dp"
+
+        GridLayout:
+            spacing: "5dp"
+            cols:2
+
+            Button:
+                text: "Additional\nHealthcare"
+                bold: True
+                font_size: "30dp"
+                background_color: 0,0.5,1,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="healthtip"
+
+            Button:
+                text: "  Chat With\nExpert Agent"
+                bold: True
+                font_size: "30dp"
+                background_color: 0,0.5,1,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="chat"
+            
+
+        Button:
+            text: "Sign Out"
+            bold: True
+            font_size: "30dp"
+            background_color: 1,0,0,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: app.root.current="login"
+
+
+
+
+
+
+<HealthTipScreen>
+    name: "healthtip"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "15dp"
+        cols:1
+
+        #image
+
+        Label:
+            id: patient_welcome
+            text: "Welcome Patient"
+            font_size: "30dp"
+            color: 0,0,0,1,
+            bold: True
+            size_hint: 1,0.15
+
+        Label:
+            text: "Healthcare Tips:"
+            color: 0,0,0,1,
+            bold: True
+            font_size: "25dp"
+            size_hint: 1,0.2
+
+        GridLayout:
+            spacing: "5dp"
+            cols:2
+
+            Label:
+                text: "Age:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: age_input_h
+
+            Label:
+                text: "Gender:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: gender_input_h
+
+            Label:
+                text: "Weight (Pounds):"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: weight_input_h
+
+            Label:
+                text: "Height (Feet):"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: height_input_h
+
+
+            Label:
+                text: "Symptoms or Sicknesses:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+            TextInput:
+                id: sickness_input_h
+
+        Button:
+            text: "Click To See Healthcare Options"
+            bold: True
+            font_size: "25dp"
+            background_color: 0,1,0.5,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_press: root.on_press_generate_healthcare_tip()
+
+        ScrollView:
+            size_hint: 1, 0.6
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+                Label:
+                    text: root.new_healthcare_tip
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    valign: 'top'
+                    halign: 'left'
+                    color: 0,0,0,1
+                    bold: False
+                    font_size: "20dp"
+
+        GridLayout:
+            spacing: "5dp"
+            cols: 2    
+
+            Button:
+                text: "Back To Home"
+                bold: True
+                font_size: "30dp"
+                background_color: 0,0.5,1,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="patient"
+
+            Button:
+                text: "Sign Out"
+                bold: True
+                font_size: "30dp"
+                background_color: 1,0,0,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="login"
+
+
+
+
+
+
+<ChatScreen>
+    name: "chat"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "15dp"
+        cols:1
+
+        #image
+
+        Label:
+            id: patient_welcome
+            text: "Welcome Patient"
+            font_size: "30dp"
+            color: 0,0,0,1,
+            bold: True
+            size_hint: 1,0.15
+
+        ScrollView:
+            size_hint: 1, 0.6
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+                Label:
+                    text: root.chat_response
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    valign: 'top'
+                    halign: 'left'
+                    color: 0,0,0,1
+                    bold: False
+                    font_size: "20dp"
+
+        GridLayout:
+            spacing: "5dp"
+            cols:2
+            
+
+            Label:
+                text: "Enter your query:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+                size_hint: 1,0.01
+            TextInput:
+                id: chat_input
+
+        Button:
+            text: "Submit"
+            bold: True
+            font_size: "25dp"
+            background_color: 0,1,0.5,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_press: root.on_press_button_chat()
+
+        
+
+        GridLayout:
+            spacing: "5dp"
+            cols: 2    
+
+            Button:
+                text: "Back To Home"
+                bold: True
+                font_size: "30dp"
+                background_color: 0,0.5,1,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="patient"
+
+            Button:
+                text: "Sign Out"
+                bold: True
+                font_size: "30dp"
+                background_color: 1,0,0,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="login"
+
+
+
+
+
+
+<DoctorScreen>
+    name: "doctor"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "15dp"
+        cols:1
+
+        #image
+
+        Label:
+            id: doctor_welcome
+            text: "Welcome Doctor"
+            font_size: "30dp"
+            color: 0,0,0,1,
+            bold: True
+            size_hint: 1,0.15
+
+        GridLayout:
+            spacing: "5dp"
+            cols:1
+        
+            Button:
+                text: "  Disease Dectection\nBased on Symptoms"
+                bold: True
+                font_size: "30dp"
+                background_color: 0,0.5,1,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="disease"
+
+            Button:
+                text: "       Treatment\nBased on Disease"
+                bold: True
+                font_size: "30dp"
+                background_color: 0,1,0.5,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="treatment"
+
+            Button:
+                text: "Chat With an Expert Agent"
+                bold: True
+                font_size: "30dp"
+                background_color: 0,0.5,1,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="chatd"
+
+        Button:
+            text: "Sign Out"
+            bold: True
+            font_size: "30dp"
+            background_color: 1,0,0,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: app.root.current="login"
+
+
+
+
+
+
+
+<ChatDScreen>
+    name: "chatd"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "15dp"
+        cols:1
+
+        #image
+
+        Label:
+            id: doctor_welcome
+            text: "Welcome Doctor"
+            font_size: "30dp"
+            color: 0,0,0,1,
+            bold: True
+            size_hint: 1,0.15
+
+        ScrollView:
+            size_hint: 1, 0.6
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+                Label:
+                    text: root.chatd_response
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    valign: 'top'
+                    halign: 'left'
+                    color: 0,0,0,1
+                    bold: False
+                    font_size: "20dp"
+
+        GridLayout:
+            spacing: "5dp"
+            cols:2
+            
+
+            Label:
+                text: "Enter your query:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "20dp"
+                size_hint: 1,0.01
+            TextInput:
+                id: chatd_input
+
+        Button:
+            text: "Submit"
+            bold: True
+            font_size: "25dp"
+            background_color: 0,1,0.5,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_press: root.on_press_button_chatd()
+
+        
+
+        GridLayout:
+            spacing: "5dp"
+            cols: 2    
+
+            Button:
+                text: "Back To Home"
+                bold: True
+                font_size: "30dp"
+                background_color: 0,0.5,1,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="doctor"
+
+            Button:
+                text: "Sign Out"
+                bold: True
+                font_size: "30dp"
+                background_color: 1,0,0,1,
+                background_normal: ""
+                size_hint:.1,.4
+                on_release: app.root.current="login"
+
+
+
+
+
+
+
+<DiseaseScreen>
+    name: "disease"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "15dp"
+        cols:1
+
+        #image
+
+        Label:
+            text: "Welcome Doctor"
+            font_size: "30dp"
+            color: 0,0,0,1,
+            bold: True
+            size_hint: 1,0.15
+
+        GridLayout:
+            spacing: "5dp"
+            cols:2
+
+            Label:
+                text: "Enter Symptoms\n(Seperate with commas!):"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                id:symptoms_input
+                multiline: False
+        
+        Button:
+            text: "Submit"
+            bold: True
+            font_size: "30dp"
+            background_color: 0,1,0.5,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_press: root.on_press_button_disease()
+
+        ScrollView:
+            size_hint: 1, 0.6
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+                Label:
+                    text: root.disease
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    valign: 'top'
+                    halign: 'left'
+                    color: 0,0,0,1
+                    bold: False
+                    font_size: "20dp"
+        
+            
+        Button:
+            text: "Back to Home"
+            bold: True
+            font_size: "30dp"
+            background_color: 0,0.5,1,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: app.root.current="doctor"
+        Button:
+            text: "Sign Out"
+            bold: True
+            font_size: "30dp"
+            background_color: 1,0,0,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: app.root.current="login"
+
+
+
+
+
+
+
+<TreatmentScreen>
+    name: "treatment"
+    size_hint: .7,1
+    pos_hint: {"center_x":.5, "center_y":.5}
+    GridLayout:
+        spacing: "15dp"
+        cols:1
+
+        #image
+
+        Label:
+            text: "Welcome Doctor"
+            font_size: "30dp"
+            color: 0,0,0,1,
+            bold: True
+            size_hint: 1,0.15
+
+        GridLayout:
+            spacing: "5dp"
+            cols:2
+
+            Label:
+                text: "Enter the sickness the \npatient has:"
+                color: 0,0,0,1,
+                bold: True
+                font_size: "22dp"
+            TextInput:
+                id:treatment_disease_input
+                multiline: False
+        Button:
+            text: "Submit"
+            bold: True
+            font_size: "30dp"
+            background_color: 0,1,0.5,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_press: root.on_press_button_treatment()
+
+        ScrollView:
+            size_hint: 1, 0.6
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+                Label:
+                    text: root.treatment_cure
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    valign: 'top'
+                    halign: 'left'
+                    color: 0,0,0,1
+                    bold: False
+                    font_size: "20dp"
+
+        Button:
+            text: "Back to Home"
+            bold: True
+            font_size: "30dp"
+            background_color: 0,0.5,1,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: app.root.current="doctor"
+        Button:
+            text: "Sign Out"
+            bold: True
+            font_size: "30dp"
+            background_color: 1,0,0,1,
+            background_normal: ""
+            size_hint:.1,.4
+            on_release: app.root.current="login"
+        

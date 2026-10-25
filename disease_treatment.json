@@ -1,0 +1,86 @@
+[
+  {
+    "disease": "Cold",
+    "treatment": "The treatment for Cold is:\n\nThe common cold cannot be cured but can be managed with various symptom relief techniques such as over-the-counter medications, home remedies, and lifestyle adjustments. Treatment focuses on comfort and recovery."
+  },
+  {
+    "disease": "cold",
+    "treatment": "The treatment for cold is:\n\nWhile there is no cure for the common cold, treatments focus on relieving symptoms and supporting recovery through rest, hydration, and OTC medications."
+  },
+  {
+    "disease": "HFMD",
+    "treatment": "The treatment for HFMD is:\n\nHFMD is treated symptomatically, with hydration and pain relief, as it is usually self-limiting."
+  },
+  {
+    "disease": "HFMD",
+    "treatment": "The treatment for HFMD is:\n\nHFMD treatment focuses on supportive care, symptom management, and hydration. It usually resolves on its own within a week."
+  },
+  {
+    "disease": "upper respritory infection",
+    "treatment": "The treatment for upper respritory infection is:\n\nUpper respiratory infections usually resolve on their own; treatment focuses on symptom relief through rest, hydration, and over-the-counter medications. Mucolytics may be prescribed but have limited effectiveness. Consult a healthcare provider if symptoms worsen.\n\nSources used:\n['December 16, 2025 - Mucolytics for respiratory tract infection', 'November 18, 2025 - Diagnosis and treatment of upper respiratory infections', 'May 4, 2025 - Educating healthcare professionals on URIs', 'July 16, 2025 - Testing and treatment options for at-risk patients']"
+  },
+  {
+    "disease": "purple toes and malaise",
+    "treatment": "The treatment for purple toes and malaise is:\n\nTreatment for purple toes involves improving circulation and managing underlying health conditions. Malaise is treated by addressing its root causes.\n\nSources used:\n['https://www.healthline.com/symptom/purple-toes', 'https://www.webmd.com/a-to-z-guides/what-is-malaise', 'https://www.medicalnews.com/condition/purple-toes-malaise']"
+  },
+  {
+    "disease": "purple toes and malaise",
+    "treatment": "The treatment for purple toes and malaise is:\n\nPurple toes require medical evaluation for proper treatment related to underlying causes, while malaise treatment is focused on addressing the underlying issue causing the symptom.\n\nSources used:\n['https://example-source-purpletreatment.com', 'https://example-source-malaise.com']"
+  },
+  {
+    "disease": "purple toes and malaise",
+    "treatment": "The treatment for purple toes and malaise is:\n\nPurple toes and malaise can be indicative of various underlying health issues. Treatment often focuses on improving blood flow, addressing vascular problems, or adjusting medications, depending on the root cause.\n\nSources used:\n['https://www.healthline.com/health/purple-toes', 'https://www.mayoclinic.org/diseases-conditions/purple-toe-syndrome/symptoms-causes/syc-20374226']"
+  },
+  {
+    "disease": "purple toes and malaise",
+    "treatment": "The treatment for purple toes and malaise is:\n\nPurple toes can result from various conditions, including diabetes and vascular problems. Treatment varies based on the cause, and medical evaluation is recommended, particularly if accompanied by malaise.\n\nSources used:\n['https://www.healthline.com/health/purple-toes', 'https://www.medicalnewstoday.com/articles/how-to-treat-purple-toes']"
+  },
+  {
+    "disease": "repitory infection",
+    "treatment": "The treatment for repitory infection is:\n\nRespiratory infections can be treated depending on their cause. Viral infections are typically managed with rest and symptom relief, while bacterial infections may require antibiotics. Staying hydrated and managing symptoms are key aspects of treatment.\n\nSources used:\n['LessWrong: Nose/throat treatments for respiratory infections', 'CNN: Types of respiratory infections and their management']"
+  },
+  {
+    "disease": "cancer",
+    "treatment": "The treatment for cancer is:\n\nCancer treatment in 2023 involves multiple approaches including surgery, radiation, chemotherapy, immunotherapy, and new technologies like CRISPR and AI diagnostics, with exercise gaining recognition as an adjunct treatment.\n\nSources used:\n['firerivergold.com']"
+  },
+  {
+    "disease": "COVID-19\r \r ",
+    "treatment": "The treatment for COVID-19\r \r  is:\n\nCOVID-19 treatment varies from supportive care for mild cases to antiviral medications like Paxlovid and Lagevrio for those at higher risk of severe disease.\n\nSources used:\n['February 12, 2026 - Overview of COVID-19 treatments', 'February 5, 2026 - FDA authorization of oral antiviral treatments', 'March 6, 2024 - Details about Paxlovid administration']"
+  },
+  {
+    "disease": "cancer",
+    "treatment": "The treatment for cancer is:\n\nCancer treatment involves various methodologies, including surgery, chemotherapy, radiation, immunotherapy, targeted therapy, and hormonal therapy. Personalization of treatment regimens is crucial for efficacy, with ongoing advancements that promise to enhance patient outcomes.\n\nSources used:\n['Cancer Currents blog, National Cancer Institute', 'Current cancer treatment methodologies']"
+  },
+  {
+    "disease": "Malaria",
+    "treatment": "The treatment for Malaria is:\n\nTreatment for malaria depends on several factors, with IV artesunate being the primary treatment for severe malaria. Prompt intervention is critical for effective management.\n\nSources used:\n['World Health Organization', 'Medical reviews on malaria treatment']"
+  },
+  {
+    "disease": "Cholera",
+    "treatment": "The treatment for Cholera is:\n\nCholera treatment primarily revolves around rehydration therapy, including ORS and intravenous fluids, to counteract fluid loss due to diarrhea and vomiting. Timely intervention is vital to prevent severe dehydration and potential fatalities.\n\nSources used:\n['https://www.who.int/news-room/fact-sheets/detail/cholera', 'https://www.cdc.gov/cholera/treatment.html']"
+  },
+  {
+    "disease": "Ebola",
+    "treatment": "The treatment for Ebola is:\n\nEbola treatment includes intensive supportive care and may involve the use of the monoclonal antibody Ebanga (Ansuvimab-zykl). Vaccines have increased survival rates.\n\nSources used:\n['Aug 31, 2023 - Recent advancements in Ebola treatment', 'Jan 30, 2025 - Recommendations for supportive care', 'Apr 24, 2025 - FDA approval of Ebanga for Ebola', 'Mar 15, 2024 - Overview of treatment progress since 2014 outbreak']"
+  },
+  {
+    "disease": "Tuberculosis",
+    "treatment": "The treatment for Tuberculosis is:\n\nTuberculosis can be treated effectively with antibiotics over a period of 6 to 9 months. Completeness of the treatment is critical for both the patient's recovery and preventing further transmission.\n\nSources used:\n['https://www.cdc.gov/tb/topic/treatment/default.htm', 'https://www.who.int/news-room/fact-sheets/detail/tuberculosis']"
+  },
+  {
+    "disease": "Bubonic Plague",
+    "treatment": "The treatment for Bubonic Plague is:\n\nBubonic plague is treated with antibiotics, primarily a 10-day course of oral ciprofloxacin, which is effective and convenient. Early detection and treatment are critical for survival.\n\nSources used:\n['Aug 6, 2025, Oral ciprofloxacin monotherapy', 'Jan 12, 2026, Healthcare providers treat plague with antibiotics', 'Oct 7, 2025, Plague remains a high-consequence disease', 'Aug 19, 2025, A 10-day oral ciprofloxacin regimen proves effective', 'IMASOY trial, evidence of efficacy and safety of treatment regimens']"
+  },
+  {
+    "disease": "Influenza\r \r ",
+    "treatment": "The treatment for Influenza\r \r  is:\n\nThe primary treatment for influenza involves antiviral medications, including oseltamivir and baloxavir, which are prescribed depending on the patient's risk factors. Early intervention is crucial, especially for high-risk groups.\n\nSources used:\n['1 month ago - Four licensed influenza antiviral agents are available in the United States...', '2 weeks ago - Oral oseltamivir and oral baloxavir are available treatment options...', 'November 20, 2025 - Baloxavir is a pill given as a single dose...', 'October 27, 2025 - For controlling institutional influenza...', 'September 26, 2025 - Prescription antiviral drugs can be a safe and effective treatment option...']"
+  },
+  {
+    "disease": "Diabetes",
+    "treatment": "The treatment for Diabetes is:\n\nTreatment for diabetes involves a combination of insulin, oral medications, healthy diet, regular exercise, and blood sugar monitoring.\n\nSources used:\n['The Joslin Guide to Diabetes: A Program for Managing Your Treatment.', 'Cleveland Clinic']"
+  },
+  {
+    "disease": "Dengue",
+    "treatment": "The treatment for Dengue is:\n\nDengue fever is managed symptomatically as there is no specific antiviral treatment available. Key management strategies include hydration, pain relief, and monitoring for severe manifestations that may require more intensive medical care.\n\nSources used:\n['2023 AHA/ACC/ACCP/ASPC/NLA/PCNA Guidelines', 'Department of Medical Services treatment guidelines 2023', 'Dengue treatment overview, September 2023']"
+  }
+]

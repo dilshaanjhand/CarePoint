@@ -1,0 +1,94 @@
+[
+  {
+    "symptoms": "runny nose",
+    "disease": "The possible diseases based on runny nose the patient may have are:\n\nRunny nose can indicate allergic rhinitis, common cold, flu, or chronic rhinitis, which are common respiratory conditions."
+  },
+  {
+    "symptoms": "runny nose",
+    "disease": "The possible diseases based on runny nose the patient may have are:\n\nA runny nose is a common symptom associated with allergies, colds, and other conditions. The main diseases linked to this symptom include allergic rhinitis, viral infections, chronic sinusitis, and nasal polyps."
+  },
+  {
+    "symptoms": "runny nose, sneezing",
+    "disease": "The possible diseases based on runny nose, sneezing the patient may have are:\n\nThe patient likely has either allergic rhinitis or the common cold, both characterized by sneezing and a runny nose."
+  },
+  {
+    "symptoms": "runny nose",
+    "disease": "The possible diseases based on runny nose the patient may have are:\n\nA runny nose can indicate various conditions, with the most common causes being allergies and viral infections like the common cold and COVID-19. Other causes may include nasal polyps and foreign objects lodged in the nose."
+  },
+  {
+    "symptoms": "coughing, sneezing,",
+    "disease": "The possible diseases based on coughing, sneezing, the patient may have are:\n\nCoughing and sneezing can indicate several diseases, including the common cold, RSV infection, and allergies, among others. COVID-19 is also a consideration if accompanied by other symptoms."
+  },
+  {
+    "symptoms": "loss of hair, ",
+    "disease": "The possible diseases based on loss of hair,  the patient may have are:\n\nHair loss can indicate multiple medical conditions, including various forms of alopecia, thyroid issues, anemia, and effects of hormonal changes or chemotherapy."
+  },
+  {
+    "symptoms": "cough, mucas in throught",
+    "disease": "The possible diseases based on cough, mucas in throught the patient may have are:\n\nThe presence of cough and mucus in the throat can be indicative of several health conditions. Common causes include respiratory infections (like the flu or pneumonia), allergies, asthma, chronic obstructive pulmonary disease (COPD), and gastroesophageal reflux disease (GERD). Additionally, environmental factors such as smoking can contribute to increased mucus production. If a patient experiences persistent coughing with mucus, it's advisable to consult a healthcare provider for a proper evaluation and treatment options."
+  },
+  {
+    "symptoms": "mucas in through, cough",
+    "disease": "The possible diseases based on mucas in through, cough the patient may have are:\n\nCoughing with mucus can be linked to several conditions. Common possibilities include allergies, chronic bronchitis, postnasal drip, and gastroesophageal reflux disease (GERD). In cases of allergies or viral infections, excessive mucus production occurs, leading to coughing. Chronic obstructive pulmonary disease (COPD), particularly chronic bronchitis, is also characterized by persistent coughing and mucus. Infections, like pneumonia or tuberculosis, could also present with similar symptoms."
+  },
+  {
+    "symptoms": "nose congestion, sore throught, fever, body ache, cough, all for the last 2 weeks",
+    "disease": "The possible diseases based on nose congestion, sore throught, fever, body ache, cough, all for the last 2 weeks the patient may have are:\n\nSymptoms suggest possible COVID-19, flu, or RSV infection; consult healthcare provider."
+  },
+  {
+    "symptoms": "constant cough for two weeks, sneezing, runny nose",
+    "disease": "The possible diseases based on constant cough for two weeks, sneezing, runny nose the patient may have are:\n\nA constant cough for two weeks, along with sneezing and a runny nose, may suggest an upper respiratory infection, allergic rhinitis, or non-allergic rhinitis. Evaluation by a healthcare professional is advisable for accurate diagnosis and treatment.\n\nSources used:\n['https://www.healthline.com', 'Cleveland Clinic']"
+  },
+  {
+    "symptoms": "cough for two weeks, sneezing, runny nose",
+    "disease": "The possible diseases based on cough for two weeks, sneezing, runny nose the patient may have are:\n\nCommon causes of a cough for two weeks with sneezing and runny nose include the common cold, bronchitis, or potentially RSV. If symptoms persist or worsen, further evaluation is needed.\n\nSources used:\n['November 18, 2025 - Understanding Common Cold Symptoms', 'September 29, 2025 - Cold vs Flu Symptoms and Their Duration', 'November 12, 2025 - Overview of Bronchitis Symptomatology', 'June 2, 2025 - Respiratory Syncytial Virus (RSV) and Its Effects']"
+  },
+  {
+    "symptoms": "coughing, headache",
+    "disease": "The possible diseases based on coughing, headache the patient may have are:\n\nPatients exhibiting coughing and headache symptoms may have respiratory infections, cough headaches or other underlying conditions. It is crucial to evaluate these symptoms concerning their duration and severity.\n\nSources used:\n['Mayo Clinic - Cough Headaches Overview', 'WebMD - Symptoms of Respiratory Infections']"
+  },
+  {
+    "symptoms": "Fever or chills\r Cough\r Shortness of breath or difficulty breathing\r Sore throat\r Congestion or a runny nose\r New loss of taste or smell\r Fatigue\r Muscle or body aches\r ",
+    "disease": "The possible diseases based on Fever or chills\r Cough\r Shortness of breath or difficulty breathing\r Sore throat\r Congestion or a runny nose\r New loss of taste or smell\r Fatigue\r Muscle or body aches\r  the patient may have are:\n\nThe listed symptoms are characteristic of COVID-19, and it's essential to consult a doctor for testing and diagnosis.\n\nSources used:\n['Centers for Disease Control and Prevention (CDC)']"
+  },
+  {
+    "symptoms": "Tiredness that sleep won\u2019t improve\r Dizziness\r Losing weight without trying\r Not eating\r Lumps and/or swelling\r Tiredness that sleep won\u2019t improve\r Dizziness\r Losing weight without trying\r Not eating\r Lumps and/or swelling\r ",
+    "disease": "The possible diseases based on Tiredness that sleep won\u2019t improve\r Dizziness\r Losing weight without trying\r Not eating\r Lumps and/or swelling\r Tiredness that sleep won\u2019t improve\r Dizziness\r Losing weight without trying\r Not eating\r Lumps and/or swelling\r  the patient may have are:\n\nPersistent tiredness, dizziness, weight loss, lack of appetite, and lumps may suggest serious conditions like cancer or autoimmune diseases. It's crucial to seek medical advice for proper diagnosis and treatment.\n\nSources used:\n['https://www.ncbi.nlm.nih.gov/', 'https://www.mayoclinic.org/', 'https://www.healthline.com/', 'https://www.webmd.com/']"
+  },
+  {
+    "symptoms": "Tiredness that sleep won\u2019t improve\r Dizziness\r Losing weight without trying\r Not eating\r Lumps and/or swelling\r Fevers\r Pain that only gets worse\r Bleeding or bruising\r Change in bladder habits\r Headaches \r Change in voice\r Persistent coughing\r Skin changes\r Mouth sores\r Jaundice\r ",
+    "disease": "The possible diseases based on Tiredness that sleep won\u2019t improve\r Dizziness\r Losing weight without trying\r Not eating\r Lumps and/or swelling\r Fevers\r Pain that only gets worse\r Bleeding or bruising\r Change in bladder habits\r Headaches \r Change in voice\r Persistent coughing\r Skin changes\r Mouth sores\r Jaundice\r  the patient may have are:\n\nSymptoms may indicate serious conditions such as cancer or liver disease requiring urgent medical evaluation.\n\nSources used:\n['https://www.mayoclinic.org', 'https://www.healthline.com', 'https://www.cancer.org']"
+  },
+  {
+    "symptoms": "Fever\r Chills\r Body aches\r Fatigue\r Headache\r Nausea and vomiting\r Diarrhea\r Seizures\r Confusion\r Coma\r Respiratory\r Organ damage\r Blood related\r Enlarged spleen\r Jaundice \r Fever\r Chills\r Body aches\r Fatigue\r Headache\r Nausea and vomiting\r Diarrhea\r Seizures\r Confusion\r Coma\r Respiratory\r Organ damage\r Blood related\r Enlarged spleen\r Jaundice \r ",
+    "disease": "The possible diseases based on Fever\r Chills\r Body aches\r Fatigue\r Headache\r Nausea and vomiting\r Diarrhea\r Seizures\r Confusion\r Coma\r Respiratory\r Organ damage\r Blood related\r Enlarged spleen\r Jaundice \r Fever\r Chills\r Body aches\r Fatigue\r Headache\r Nausea and vomiting\r Diarrhea\r Seizures\r Confusion\r Coma\r Respiratory\r Organ damage\r Blood related\r Enlarged spleen\r Jaundice \r  the patient may have are:\n\nSymptoms such as fever, chills, body aches, fatigue, headache, nausea, vomiting, diarrhea, seizures, confusion, coma, respiratory issues, organ damage, blood-specific issues, enlarged spleen, and jaundice may indicate severe malaria or yellow fever. Both are life-threatening and require urgent medical care.\n\nSources used:\n['1 day ago - Severe malaria occurs when the Plasmodium infection causes damage to vital organs.', '2 weeks ago - Yellow fever can lead to death for 20% to 50% of those who develop severe disease.', 'February 11, 2026 - Initial symptoms of yellow fever can include fever, chills, severe headache, back pain, general body aches.', 'October 14, 2025 - Cerebral malaria is caused by protozoa parasites in red blood cells blocking the small blood vessels.']"
+  },
+  {
+    "symptoms": "Watery diarrhea\r Vomiting\r Leg cramps\r Nausea\r Dehydration symptoms include:\r Dry mouth\r Rapid Heart rate\r Low blood pressure\r Sunken eyes\r Dry skin\r Thirst\r Lack of tears\r Little urine\r Irritability\r Lethargy\r Watery diarrhea\r Vomiting\r Leg cramps\r Nausea\r Dehydration symptoms include:\r Dry mouth\r Rapid Heart rate\r Low blood pressure\r Sunken eyes\r Dry skin\r Thirst\r Lack of tears\r Little urine\r Irritability\r Lethargy\r ",
+    "disease": "The possible diseases based on Watery diarrhea\r Vomiting\r Leg cramps\r Nausea\r Dehydration symptoms include:\r Dry mouth\r Rapid Heart rate\r Low blood pressure\r Sunken eyes\r Dry skin\r Thirst\r Lack of tears\r Little urine\r Irritability\r Lethargy\r Watery diarrhea\r Vomiting\r Leg cramps\r Nausea\r Dehydration symptoms include:\r Dry mouth\r Rapid Heart rate\r Low blood pressure\r Sunken eyes\r Dry skin\r Thirst\r Lack of tears\r Little urine\r Irritability\r Lethargy\r  the patient may have are:\n\nThe patient's symptoms strongly suggest either viral gastroenteritis or severe food poisoning, both of which can cause significant dehydration.\n\nSources used:\n['April 30, 2025 - Viral gastroenteritis includes symptoms such as watery diarrhea, stomach cramps, nausea, vomiting, and sometimes fever.', 'November 24, 2025 - Severe food poisoning can lead to symptoms of bloody diarrhea, frequent vomiting, and dehydration.', 'October 20, 2025 - Young children and the elderly are particularly susceptible to dehydration due to vomiting and diarrhea.', \"Symptoms associated with Crohn's disease include diarrhea and vomiting that can lead to severe dehydration.\"]"
+  },
+  {
+    "symptoms": "Fever\r Severe headache\r Weakness and fatigue\r Joint and muscle pain\r Sore throat \r Loss of appetite.\r Later symptoms include:\r Extreme diarrhea \r Vomiting\r Stomach pain\r Rash\r Unexpected bleeding and/or bruising\r Red eyes\r Hiccups\r Weakened kidney and liver function\r Fever\r Severe headache\r Weakness and fatigue\r Joint and muscle pain\r Sore throat \r Loss of appetite.\r Later symptoms include:\r Extreme diarrhea \r Vomiting\r Stomach pain\r Rash\r Unexpected bleeding and/or bruising\r Red eyes\r Hiccups\r Weakened kidney and liver function\r ",
+    "disease": "The possible diseases based on Fever\r Severe headache\r Weakness and fatigue\r Joint and muscle pain\r Sore throat \r Loss of appetite.\r Later symptoms include:\r Extreme diarrhea \r Vomiting\r Stomach pain\r Rash\r Unexpected bleeding and/or bruising\r Red eyes\r Hiccups\r Weakened kidney and liver function\r Fever\r Severe headache\r Weakness and fatigue\r Joint and muscle pain\r Sore throat \r Loss of appetite.\r Later symptoms include:\r Extreme diarrhea \r Vomiting\r Stomach pain\r Rash\r Unexpected bleeding and/or bruising\r Red eyes\r Hiccups\r Weakened kidney and liver function\r  the patient may have are:\n\nEbola presents with a range of initial symptoms such as fever, headache, and muscle aches, often resembling flu or malaria. As the disease progresses, severe symptoms like vomiting, diarrhea, and bleeding emerge. Prompt medical attention is crucial due to its high mortality rates.\n\nSources used:\n['Centers for Disease Control and Prevention', 'World Health Organization', 'National Institutes of Health']"
+  },
+  {
+    "symptoms": "Continues cough\r Chest pain\r Shortness of breath\r Fever\r Chills\r Night sweats\r Weight loss\r Fatigue\r Loss of appetite\r Swollen glands\r Abdominal pain\r Back pain\r ",
+    "disease": "The possible diseases based on Continues cough\r Chest pain\r Shortness of breath\r Fever\r Chills\r Night sweats\r Weight loss\r Fatigue\r Loss of appetite\r Swollen glands\r Abdominal pain\r Back pain\r  the patient may have are:\n\nThe patient may be suffering from tuberculosis or lymphoma, both associated with respiratory and systemic symptoms.\n\nSources used:\n['https://www.cdc.gov/tb/topic/basics/signsandsymptoms.htm', 'https://www.cancer.org/cancer/lymphoma.html', 'https://www.mayoclinic.org/diseases-conditions/tuberculosis/symptoms-causes/syc-20325937']"
+  },
+  {
+    "symptoms": "Fever\r Chills\r Headache\r Weakness\r Swollen lymph nodes\r Pain near the nodes.\r Vomiting\r Muscle pain\r Bleeding under the skin\r ",
+    "disease": "The possible diseases based on Fever\r Chills\r Headache\r Weakness\r Swollen lymph nodes\r Pain near the nodes.\r Vomiting\r Muscle pain\r Bleeding under the skin\r  the patient may have are:\n\nThe symptoms may suggest **leukemia** or **yellow fever**, both of which involve fever, chills, swollen lymph nodes, and other systemic symptoms.\n\nSources used:\n['https://www.healthline.com/', 'https://www.mayoclinic.org/', 'https://www.webmd.com/']"
+  },
+  {
+    "symptoms": "Fever\r Chills\r Cough\r Sore throat\r Muscle and body aches\r Headaches\r Fatigue\r Runny nose\r Vomiting and diarrhea\r Loss of appetite\r Shortness of breath\r Difficulty breathing\r ",
+    "disease": "The possible diseases based on Fever\r Chills\r Cough\r Sore throat\r Muscle and body aches\r Headaches\r Fatigue\r Runny nose\r Vomiting and diarrhea\r Loss of appetite\r Shortness of breath\r Difficulty breathing\r  the patient may have are:\n\nSymptoms like fever, cough, and body aches may indicate COVID-19 or influenza. Testing is crucial for diagnosis.\n\nSources used:\n['https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html', 'https://www.webmd.com/cold-and-flu/cold-guide/flu-and-cold-symptoms', 'https://www.healthline.com/health/cold-flu-difference']"
+  },
+  {
+    "symptoms": "Increased thirst\r Frequent urination\r Extreme hunger\r Weight loss\r Fatigue\r Blurred vision\r Increased thirst\r Frequent urination\r Extreme hunger\r Weight loss\r Fatigue\r Blurred vision\r ",
+    "disease": "The possible diseases based on Increased thirst\r Frequent urination\r Extreme hunger\r Weight loss\r Fatigue\r Blurred vision\r Increased thirst\r Frequent urination\r Extreme hunger\r Weight loss\r Fatigue\r Blurred vision\r  the patient may have are:\n\nThe patient likely has diabetes, exhibiting classic symptoms such as increased thirst, frequent urination, extreme hunger, weight loss, fatigue, and blurred vision.\n\nSources used:\n['https://www.healthline.com/health/type-1-diabetes-symptoms', 'https://www.diabetes.org/diabetes/basics/symptoms']"
+  },
+  {
+    "symptoms": "High fever\r Severe headache\r Behind the eye pain\r Joint and muscle  pain\r Nausea and vomiting\r Rash\r Swollen glands \r Mild bleeding\r High fever\r Severe headache\r Behind the eye pain\r Joint and muscle  pain\r Nausea and vomiting\r Rash\r Swollen glands \r Mild bleeding\r ",
+    "disease": "The possible diseases based on High fever\r Severe headache\r Behind the eye pain\r Joint and muscle  pain\r Nausea and vomiting\r Rash\r Swollen glands \r Mild bleeding\r High fever\r Severe headache\r Behind the eye pain\r Joint and muscle  pain\r Nausea and vomiting\r Rash\r Swollen glands \r Mild bleeding\r  the patient may have are:\n\nThe patient may have meningococcal disease given the symptoms of high fever, severe headache, and rash. Immediate medical attention is needed.\n\nSources used:\n['Oct 18, 2025 - Meningococcal meningitis is a serious infection that can be deadly without quick treatment.', 'Sep 26, 2025 - Symptoms of meningococcal disease can first appear as a flu-like illness and rapidly worsen.', 'Dec 27, 2025 - A severe headache, fever, and stiff neck are common symptoms of early-stage meningitis.']"
+  }
+]
