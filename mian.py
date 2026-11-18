@@ -1,10 +1,14 @@
 import os
 import csv
 import json
+from threading import Thread
 from kivy.app import App
 from kivy.lang import Builder
+from kivy.clock import Clock
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.popup import Popup
+from kivy.uix.label import Label
 from kivy.core.window import Window 
 from dotenv import load_dotenv
 from pydantic import BaseModel
@@ -26,12 +30,6 @@ load_dotenv()
 # Simple user storage
 USERS_FILE = "users.json"
 CHROMA_PATH = "chroma_db"
-
-
-
-
-
-
 
 
 
@@ -208,6 +206,45 @@ agent = create_tool_calling_agent(
 )
 
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+
+
+class LoadingPopup(Popup):
+    def __init__(self, **kwargs):
+        super().__init__(
+            title="Generating AI response",
+            content=Label(
+                text="Please wait...",
+                halign="center",
+                valign="middle",
+                font_size="22dp",
+            ),
+            size_hint=(0.55, 0.25),
+            auto_dismiss=False,
+            **kwargs,
+        )
+
+
+def run_ai_request(query: str, on_complete):
+    loading_popup = LoadingPopup()
+    loading_popup.open()
+
+    def worker():
+        try:
+            raw_response = agent_executor.invoke({"query": query})
+            structured_response = parser.parse(raw_response.get("output"))
+            result = (structured_response, None)
+        except Exception as error:
+            print("Error generating AI response:", error)
+            result = (None, error)
+
+        def finish(_dt):
+            loading_popup.dismiss()
+            on_complete(*result)
+
+        Clock.schedule_once(finish)
+
+    thread = Thread(target=worker, daemon=True)
+    thread.start()
 '''
 go_again = True
 
@@ -407,8 +444,7 @@ class PatientScreen(Screen):
     def on_press_submit_healthcare_tips(self):
         app = App.get_running_app()
         username = getattr(app, "current_user", "")
-        
-        
+
         if username:
             users = load_users()
             self.patient_age = users.get(username, {}).get('age')
@@ -416,28 +452,23 @@ class PatientScreen(Screen):
             self.patient_weight = users.get(username, {}).get('weight')
             self.patient_height = users.get(username, {}).get('height')
             self.patient_sickness = users.get(username, {}).get('sickness')
-            #db = self.add_to_chroma(self.split_documents(self.load_documents()))
-            #query = f"How much should a {self.patient_gender} person who is {self.patient_age} year old weighing {self.patient_weight} lbs and has a height of {self.patient_height} feet with a sickness of {self.patient_sickness} exercise daily and how much should there calorie intake be?"
-            #results = db.similarity_search_with_score(query, k=5)
-            #context_text = "\n\n--\n\n".join([doc.page_content for doc , _score in results])
-            raw_response = agent_executor.invoke({"query": f"How much should a {self.patient_gender} person who is {self.patient_age} year old weighing {self.patient_weight} lbs and has a height of {self.patient_height} feet with a sickness of {self.patient_sickness} exercise daily and how much should there calorie intake be?"})
-            #print(raw_response)
-            try:
-                structured_response = parser.parse(raw_response.get("output"))
-                print("Topic:", structured_response.topic)
-                print("\n")
-                print(structured_response.text)
-                print("\n")
-                print("In conclusion:", structured_response.summary)
-                print("\n")
-                print("The sources I used:", structured_response.sources)
+            query = f"How much should a {self.patient_gender} person who is {self.patient_age} year old weighing {self.patient_weight} lbs and has a height of {self.patient_height} feet with a sickness of {self.patient_sickness} exercise daily and how much should there calorie intake be?"
+
+            def on_complete(structured_response, error):
+                if error:
+                    self.healthcare_tip = "Unable to generate healthcare tips. Please try again."
+                    return
                 self.healthcare_tip = f"If you are a {self.patient_gender} person who is {self.patient_age} years old, weighing {self.patient_weight} lbs and your height is {self.patient_height} feet with a sickness of {self.patient_sickness}, here is your healthcare tip:\n\n{structured_response.text}\n\nSources used:\n{structured_response.sources}"
+                save_healthcare_entry(
+                    self.patient_age,
+                    self.patient_gender,
+                    self.patient_weight,
+                    self.patient_height,
+                    self.patient_sickness,
+                    self.healthcare_tip,
+                )
 
-            except Exception as e:
-                print("Error parsing response:", e, "Raw response:", raw_response)
-
-            # Save healthcare entry to JSON
-            save_healthcare_entry(self.patient_age, self.patient_gender, self.patient_weight, self.patient_height, self.patient_sickness, self.healthcare_tip)
+            run_ai_request(query, on_complete)
 
 
 
@@ -457,22 +488,23 @@ class HealthTipScreen(Screen):
         self.patient_weight = self.ids.weight_input_h.text
         self.patient_height = self.ids.height_input_h.text
         self.patient_sickness = self.ids.sickness_input_h.text
-        raw_response = agent_executor.invoke({"query": f"Give me a list of supplements, over the counter treatment suggestions, and cures for the symptoms of {self.patient_sickness} for a {self.patient_gender} person who is {self.patient_age} years old weighing {self.patient_weight} lbs and has a height of {self.patient_height} feet. Also, how much should they exercise daily and how much should there calorie intake be?"})
-        #print(raw_response)
-        try:
-            structured_response = parser.parse(raw_response.get("output"))
-            print("Topic:", structured_response.topic)
-            print("\n")
-            print(structured_response.text)
-            print("\n")
-            print("In conclusion:", structured_response.summary)
-            print("\n")
-            print("The sources I used:", structured_response.sources)
+        query = f"Give me a list of supplements, over the counter treatment suggestions, and cures for the symptoms of {self.patient_sickness} for a {self.patient_gender} person who is {self.patient_age} years old weighing {self.patient_weight} lbs and has a height of {self.patient_height} feet. Also, how much should they exercise daily and how much should there calorie intake be?"
+
+        def on_complete(structured_response, error):
+            if error:
+                self.new_healthcare_tip = "Unable to generate healthcare tips. Please try again."
+                return
             self.new_healthcare_tip = f"If you are a {self.patient_gender} person who is {self.patient_age} years old, weighing {self.patient_weight} lbs and your height is {self.patient_height} feet with a sickness of {self.patient_sickness}, here is your healthcare tip:\n\n{structured_response.text}\n\nSources used:\n{structured_response.sources}"
-        except Exception as e:
-            print("Error parsing response:", e, "Raw response:", raw_response)
-        # Save healthcare entry to JSON
-        save_healthcare_entry(self.patient_age, self.patient_gender, self.patient_weight, self.patient_height, self.patient_sickness, self.new_healthcare_tip)
+            save_healthcare_entry(
+                self.patient_age,
+                self.patient_gender,
+                self.patient_weight,
+                self.patient_height,
+                self.patient_sickness,
+                self.new_healthcare_tip,
+            )
+
+        run_ai_request(query, on_complete)
 
 
 
@@ -483,23 +515,18 @@ class DiseaseScreen(Screen):
     disease = StringProperty("")
     def on_press_button_disease(self):
         self.symptoms = self.ids.symptoms_input.text
-        raw_response = agent_executor.invoke({"query": f"What disease does the patient have if they have {self.symptoms} as there symptoms?"})
-        #print(raw_response)
-        try:
-            structured_response = parser.parse(raw_response.get("output"))
-            print("Topic:", structured_response.topic)
-            print("\n")
-            print(structured_response.text)
-            print("\n")
-            print("In conclusion:", structured_response.summary)
-            print("\n")
-            print("The sources I used:", structured_response.sources)
-            self.disease = f"The possible diseases based on {self.symptoms} the patient may have are:\n\n{structured_response.summary}\n\nSources used:\n{structured_response.sources}"
 
-        except Exception as e:
-            print("Error parsing response:", e, "Raw response:", raw_response)
-        # Save symptoms and disease as JSON entries in symptoms_disease.json
-        save_symptoms_entry(self.symptoms, self.disease)
+        def on_complete(structured_response, error):
+            if error:
+                self.disease = "Unable to analyze the symptoms. Please try again."
+                return
+            self.disease = f"The possible diseases based on {self.symptoms} the patient may have are:\n\n{structured_response.summary}\n\nSources used:\n{structured_response.sources}"
+            save_symptoms_entry(self.symptoms, self.disease)
+
+        run_ai_request(
+            f"What disease does the patient have if they have {self.symptoms} as there symptoms?",
+            on_complete,
+        )
 
 
 
@@ -509,21 +536,14 @@ class ChatScreen(Screen):
     chat_input = StringProperty("")
     def on_press_button_chat(self):
         user_query = self.ids.chat_input.text
-        raw_response = agent_executor.invoke({"query": user_query})
-        #print(raw_response)
-        try:
-            structured_response = parser.parse(raw_response.get("output"))
-            print("Topic:", structured_response.topic)
-            print("\n")
-            print(structured_response.text)
-            print("\n")
-            print("In conclusion:", structured_response.summary)
-            print("\n")
-            print("The sources I used:", structured_response.sources)
+
+        def on_complete(structured_response, error):
+            if error:
+                self.chat_response = "Unable to generate a response. Please try again."
+                return
             self.chat_response = f"Response to your query:\n\n{structured_response.text}\n\nSources used:\n{structured_response.sources}"
 
-        except Exception as e:
-            print("Error parsing response:", e, "Raw response:", raw_response)
+        run_ai_request(user_query, on_complete)
 
 
 
@@ -534,21 +554,14 @@ class ChatDScreen(Screen):
     chatd_input = StringProperty("")
     def on_press_button_chatd(self):
         user_query = self.ids.chatd_input.text
-        raw_response = agent_executor.invoke({"query": user_query})
-        #print(raw_response)
-        try:
-            structured_response = parser.parse(raw_response.get("output"))
-            print("Topic:", structured_response.topic)
-            print("\n")
-            print(structured_response.text)
-            print("\n")
-            print("In conclusion:", structured_response.summary)
-            print("\n")
-            print("The sources I used:", structured_response.sources)
+
+        def on_complete(structured_response, error):
+            if error:
+                self.chatd_response = "Unable to generate a response. Please try again."
+                return
             self.chatd_response = f"Response to your query:\n\n{structured_response.text}\n\nSources used:\n{structured_response.sources}"
 
-        except Exception as e:
-            print("Error parsing response:", e, "Raw response:", raw_response)
+        run_ai_request(user_query, on_complete)
 
 
 
@@ -558,24 +571,18 @@ class TreatmentScreen(Screen):
     treatment_cure = StringProperty("")
     def on_press_button_treatment(self):
         self.treatment_disease = self.ids.treatment_disease_input.text
-        raw_response = agent_executor.invoke({"query": f"What is the treatment for {self.treatment_disease}?"})
-        #print(raw_response)
-        try:
-            structured_response = parser.parse(raw_response.get("output"))
-            print("Topic:", structured_response.topic)
-            print("\n")
-            print(structured_response.text)
-            print("\n")
-            print("In conclusion:", structured_response.summary)
-            print("\n")
-            print("The sources I used:", structured_response.sources)
+
+        def on_complete(structured_response, error):
+            if error:
+                self.treatment_cure = "Unable to find a treatment response. Please try again."
+                return
             self.treatment_cure = f"The treatment for {self.treatment_disease} is:\n\n{structured_response.summary}\n\nSources used:\n{structured_response.sources}"
+            save_treatment_entry(self.treatment_disease, self.treatment_cure)
 
-        except Exception as e:
-            print("Error parsing response:", e, "Raw response:", raw_response)
-
-        # Save treatment entry to JSON
-        save_treatment_entry(self.treatment_disease, self.treatment_cure)
+        run_ai_request(
+            f"What is the treatment for {self.treatment_disease}?",
+            on_complete,
+        )
 
 
 
