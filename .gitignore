@@ -1,3 +1,10 @@
 users.json
 .env
 __pycache__/
+venv/
+chroma_db/
+*.tmp
+symptoms_disease.json
+disease_treatment.json
+healthcare_tip.json
+reaserch_output.txt
