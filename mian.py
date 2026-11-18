@@ -9,7 +9,9 @@ from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
+from kivy.uix.behaviors import ButtonBehavior
 from kivy.core.window import Window 
+from kivy.properties import ListProperty
 from dotenv import load_dotenv
 from pydantic import BaseModel
 from langchain_openai import ChatOpenAI
@@ -589,6 +591,11 @@ class TreatmentScreen(Screen):
 
 class WindowManager(ScreenManager):
     pass
+
+
+
+class RoundedButton(ButtonBehavior, Label):
+    background_color = ListProperty([1, 1, 1, 1])
 
 
 

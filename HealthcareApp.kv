@@ -1,3 +1,13 @@
+<RoundedButton>:
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [dp(24),]
+
+
 ScreenManager:
     LoginScreen:
     RegisterScreen:
@@ -54,7 +64,7 @@ ScreenManager:
                 password: True
                 multiline: False
 
-        Button:
+        RoundedButton:
             text: "Register Here"
             bold: True
             font_size: "30dp"
@@ -64,7 +74,7 @@ ScreenManager:
             size_hint:.1,.4
             on_release: app.root.current="register"
 
-        Button:
+        RoundedButton:
             text: "Login as Doctor"
             bold: True
             font_size: "30dp"
@@ -73,7 +83,7 @@ ScreenManager:
             size_hint:.1,.4
             on_release: root.login_user('doctor')
 
-        Button:
+        RoundedButton:
             text: "Login as Patient"
             bold: True
             font_size: "30dp"
@@ -110,7 +120,7 @@ ScreenManager:
             bold: True
             size_hint: 1,0.1
 
-        Button:
+        RoundedButton:
             text: "Back"
             bold: True
             font_size: "30dp"
@@ -209,7 +219,7 @@ ScreenManager:
             color: 1,0,0,1
             size_hint: 1,0.1
 
-        Button:
+        RoundedButton:
             text: "Sign Up as Doctor"
             bold: True
             font_size: "30dp"
@@ -218,7 +228,7 @@ ScreenManager:
             size_hint:.1,.4
             on_release: root.register_user('doctor')
 
-        Button:
+        RoundedButton:
             text: "Sign Up as Patient"
             bold: True
             font_size: "30dp"
@@ -251,7 +261,7 @@ ScreenManager:
             bold: True
             size_hint: 1,0.15
 
-        Button:
+        RoundedButton:
             text: "Submit to See Healthcare Tips"
             bold: True
             font_size: "25dp"
@@ -285,7 +295,7 @@ ScreenManager:
             spacing: "5dp"
             cols:2
 
-            Button:
+            RoundedButton:
                 text: "Additional\nHealthcare"
                 bold: True
                 font_size: "30dp"
@@ -294,7 +304,7 @@ ScreenManager:
                 size_hint:.1,.4
                 on_release: app.root.current="healthtip"
 
-            Button:
+            RoundedButton:
                 text: "  Chat With\nExpert Agent"
                 bold: True
                 font_size: "30dp"
@@ -304,7 +314,7 @@ ScreenManager:
                 on_release: app.root.current="chat"
             
 
-        Button:
+        RoundedButton:
             text: "Sign Out"
             bold: True
             font_size: "30dp"
@@ -388,7 +398,7 @@ ScreenManager:
             TextInput:
                 id: sickness_input_h
 
-        Button:
+        RoundedButton:
             text: "Click To See Healthcare Options"
             bold: True
             font_size: "25dp"
@@ -422,7 +432,7 @@ ScreenManager:
             spacing: "5dp"
             cols: 2    
 
-            Button:
+            RoundedButton:
                 text: "Back To Home"
                 bold: True
                 font_size: "30dp"
@@ -431,7 +441,7 @@ ScreenManager:
                 size_hint:.1,.4
                 on_release: app.root.current="patient"
 
-            Button:
+            RoundedButton:
                 text: "Sign Out"
                 bold: True
                 font_size: "30dp"
@@ -498,7 +508,7 @@ ScreenManager:
             TextInput:
                 id: chat_input
 
-        Button:
+        RoundedButton:
             text: "Submit"
             bold: True
             font_size: "25dp"
@@ -513,7 +523,7 @@ ScreenManager:
             spacing: "5dp"
             cols: 2    
 
-            Button:
+            RoundedButton:
                 text: "Back To Home"
                 bold: True
                 font_size: "30dp"
@@ -522,7 +532,7 @@ ScreenManager:
                 size_hint:.1,.4
                 on_release: app.root.current="patient"
 
-            Button:
+            RoundedButton:
                 text: "Sign Out"
                 bold: True
                 font_size: "30dp"
@@ -558,7 +568,7 @@ ScreenManager:
             spacing: "5dp"
             cols:1
         
-            Button:
+            RoundedButton:
                 text: "  Disease Detection\nBased on Symptoms"
                 bold: True
                 font_size: "30dp"
@@ -567,7 +577,7 @@ ScreenManager:
                 size_hint:.1,.4
                 on_release: app.root.current="disease"
 
-            Button:
+            RoundedButton:
                 text: "       Treatment\nBased on Disease"
                 bold: True
                 font_size: "30dp"
@@ -576,7 +586,7 @@ ScreenManager:
                 size_hint:.1,.4
                 on_release: app.root.current="treatment"
 
-            Button:
+            RoundedButton:
                 text: "Chat With an Expert Agent"
                 bold: True
                 font_size: "30dp"
@@ -585,7 +595,7 @@ ScreenManager:
                 size_hint:.1,.4
                 on_release: app.root.current="chatd"
 
-        Button:
+        RoundedButton:
             text: "Sign Out"
             bold: True
             font_size: "30dp"
@@ -653,7 +663,7 @@ ScreenManager:
             TextInput:
                 id: chatd_input
 
-        Button:
+        RoundedButton:
             text: "Submit"
             bold: True
             font_size: "25dp"
@@ -668,7 +678,7 @@ ScreenManager:
             spacing: "5dp"
             cols: 2    
 
-            Button:
+            RoundedButton:
                 text: "Back To Home"
                 bold: True
                 font_size: "30dp"
@@ -677,7 +687,7 @@ ScreenManager:
                 size_hint:.1,.4
                 on_release: app.root.current="doctor"
 
-            Button:
+            RoundedButton:
                 text: "Sign Out"
                 bold: True
                 font_size: "30dp"
@@ -722,7 +732,7 @@ ScreenManager:
                 id:symptoms_input
                 multiline: False
         
-        Button:
+        RoundedButton:
             text: "Submit"
             bold: True
             font_size: "30dp"
@@ -753,7 +763,7 @@ ScreenManager:
                     font_size: "20dp"
         
             
-        Button:
+        RoundedButton:
             text: "Back to Home"
             bold: True
             font_size: "30dp"
@@ -761,7 +771,7 @@ ScreenManager:
             background_normal: ""
             size_hint:.1,.4
             on_release: app.root.current="doctor"
-        Button:
+        RoundedButton:
             text: "Sign Out"
             bold: True
             font_size: "30dp"
@@ -805,7 +815,7 @@ ScreenManager:
             TextInput:
                 id:treatment_disease_input
                 multiline: False
-        Button:
+        RoundedButton:
             text: "Submit"
             bold: True
             font_size: "30dp"
@@ -835,7 +845,7 @@ ScreenManager:
                     bold: False
                     font_size: "20dp"
 
-        Button:
+        RoundedButton:
             text: "Back to Home"
             bold: True
             font_size: "30dp"
@@ -843,7 +853,7 @@ ScreenManager:
             background_normal: ""
             size_hint:.1,.4
             on_release: app.root.current="doctor"
-        Button:
+        RoundedButton:
             text: "Sign Out"
             bold: True
             font_size: "30dp"
